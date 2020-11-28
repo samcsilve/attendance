@@ -41,13 +41,14 @@ export const createStudent = (name, grade, hour) => async (
     });
     dispatch({ type: STUDENT_CREATE_RESET });
   } catch (error) {
-    dispatch({
-      type: STUDENT_CREATE_FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
+      dispatch({
+        type: STUDENT_CREATE_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    
   }
 };
 

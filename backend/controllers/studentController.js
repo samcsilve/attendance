@@ -17,11 +17,6 @@ const getStudents = asyncHandler(async (req, res) => {
 const newStudent = asyncHandler(async (req, res) => {
   const { name, grade, hour } = req.body;
 
-  if (hour === {}) {
-    res.status(400);
-    throw new Error("Class is required. Please select or create a class.");
-  }
-
   const existingStudent = await Student.findOne({ user: req.user._id, name });
 
   if (existingStudent) {
