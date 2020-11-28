@@ -67,10 +67,12 @@ const NewStudent = ({ history }) => {
         <Form.Group controlId="hour">
           <Form.Label>Class</Form.Label>
           <Form.Control
+            required
             as="select"
             value={hourInfo}
             onChange={(e) => setHourInfo(e.target.value)}
           >
+            <option>- - -</option>
             {hours &&
               hours.map((hour) => (
                 <option value={hour._id} key={hour._id}>
