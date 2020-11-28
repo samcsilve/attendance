@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Container, Row, Table, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { LinkContainer } from "react-router-bootstrap";
 import { getHourDetails, deleteHour } from "../actions/hourActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
@@ -38,6 +39,11 @@ const HourDetails = ({ history, match }) => {
             <Row>
               <h3>{hour && hour.subject}</h3>
               <div className="ml-auto">
+                <LinkContainer to="/new-student" className="mx-1">
+                  <Button className="btn btn-success btn-sm">
+                    <i className="fas fa-plus"></i>
+                  </Button>
+                </LinkContainer>
                 <Button
                   onClick={deleteHourFromPage}
                   className="btn btn-danger btn-sm"
