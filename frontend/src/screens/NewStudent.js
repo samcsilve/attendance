@@ -9,7 +9,7 @@ import { listHours } from "../actions/hourActions";
 const NewStudent = ({ history }) => {
   const [name, setName] = useState("");
   const [grade, setGrade] = useState("");
-  const [hourInfo, setHourInfo] = useState('');
+  const [hourInfo, setHourInfo] = useState({});
 
   const dispatch = useDispatch();
 

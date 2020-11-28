@@ -41,12 +41,6 @@ export const createStudent = (name, grade, hour) => async (
     });
     dispatch({ type: STUDENT_CREATE_RESET });
   } catch (error) {
-    if (
-      error.response.data.message ===
-      `Student validation failed: hour: Cast to ObjectId failed for value "" at path "hour"`
-    ) {
-      error.response.data.message = 'Please select or create a class.'
-    }
       dispatch({
         type: STUDENT_CREATE_FAIL,
         payload:
