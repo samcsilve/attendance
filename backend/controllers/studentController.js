@@ -17,7 +17,7 @@ const getStudents = asyncHandler(async (req, res) => {
 const newStudent = asyncHandler(async (req, res) => {
   const { name, grade, hour } = req.body;
 
-  if (!hour) {
+  if (hour === {}) {
     res.status(400);
     throw new Error("Class is required. Please select or create a class.");
   }
