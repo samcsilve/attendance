@@ -12,6 +12,7 @@ const studentSchema = mongoose.Schema(
     hour: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Hour",
+      required: true,
     },
     attendance: [
       {
